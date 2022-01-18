@@ -1,11 +1,17 @@
 import random
 from datetime import datetime
 
+print("░█████╗░██████╗░░█████╗░██╗░░░░░░█████╗░  ░██████╗░██╗░░░██╗███████╗░██████╗░██████╗")
+print("██╔══██╗██╔══██╗██╔══██╗██║░░░░░██╔══██╗  ██╔════╝░██║░░░██║██╔════╝██╔════╝██╔════╝")
+print("███████║██████╔╝██║░░██║██║░░░░░██║░░██║  ██║░░██╗░██║░░░██║█████╗░░╚█████╗░╚█████╗░")
+print("██╔══██║██╔═══╝░██║░░██║██║░░░░░██║░░██║  ██║░░╚██╗██║░░░██║██╔══╝░░░╚═══██╗░╚═══██╗")
+print("██║░░██║██║░░░░░╚█████╔╝███████╗╚█████╔╝  ╚██████╔╝╚██████╔╝███████╗██████╔╝██████╔╝")
+print("╚═╝░░╚═╝╚═╝░░░░░░╚════╝░╚══════╝░╚════╝░  ░╚═════╝░░╚═════╝░╚══════╝╚═════╝░╚═════╝░")
+
+
 myName = input('Hello! What is your name? ')
 
-modeselector = int(input(" Would you like to play multiplayer or against ai?"))
-
-
+modeselector = int(input("Would you like to play multiplayer (1) or against ai (2)? \n"))
 
 def number():
     chances = 1
@@ -28,15 +34,13 @@ def number():
         chances += 1
         continue
 
-
 def check_points():
     if points[0] < points[1]:
-        print(f"\n{name_1} is win by {points[1] - points[0]} points..")
+        print(f"\n{myName} is win by {points[1] - points[0]} points..")
     elif points[0] > points[1]:
         print(f"\n{name_2} is win by {points[0] - points[1]} points..")
     else:
         print("\nThis is draw because of same points..!")
-
 
 def play_quit():
     play_game = input("\n\nEnter any key to continue or \"Q\" to quit...!")
@@ -47,27 +51,41 @@ def play_quit():
     else:
         print("Enjoy the programme...!\n")
 
-
 def login(msg):
-    global name_1
+    global myName
     global name_2
     with open("record.txt", "a") as f:
-        f.write(f"{name_1.capitalize()} and {name_2.capitalize()} are {msg} on {datetime.now()}\n")
+        f.write(f"{myName.capitalize()} and {name_2.capitalize()} are {msg} on {datetime.now()}\n")
 
 if modeselector == 1:
+
     print("\nWelcome to Multi-player\n")
-    name_1 = input("Enter first player name: ")
     name_2 = input("Enter second player name: ")
-    print("\nHello " + name_1.capitalize() + " and " + name_2.capitalize() + "! Best of Luck!")
+    print("\nHello " + myName.capitalize() + " and " + name_2.capitalize() + "! Best of Luck!")
     print("\nThe game is about to start!\n Let's play and win!\n\n")
     login('Playing the multiplayer number guessing game')
 
     try:
-        a = int(input("Enter the first number in range: "))
-        b = int(input("Enter the second number in range: "))
+        level = int(input('Pick a level of difficulty (1 to 4): '))
+        if level == 1:
+            top = 20
+            tries = 5
+        elif level == 2:
+            top = 100
+            tries = 6
+        elif level == 3:
+            top = 250
+            tries = 10
+        else:
+            top = 1000
+            tries = 10
+
+        a = 1
+        b = top
+
         if a < b:
-            if a > 100 or a < -100 or b > 100 or b < -100:
-                print("Number should be lesser than 100 and greater than -100..")
+            if a > 100 or a < -100000 or b > 100000 or b < -100000:
+                print("Number should be lesser than 100 and greater than -100000..")
                 exit()
         else:
             print("first number should be lesser than the second one...!")
@@ -83,7 +101,7 @@ if modeselector == 1:
         if play % 2 != 0:
             num = random.randint(a, b)
             print("\nThis is first inning...!")
-            print(f"{name_1} will guess the number..")
+            print(f"{myName} will guess the number..")
             number()
             play += 1
         if play % 2 == 0:
@@ -98,22 +116,22 @@ if modeselector == 1:
         points.clear()
         play_quit()
 
-if modeselector == 0:
+if modeselector == 2:
 
-    print("\nWelcome to Multi-player\n")
+    print("\nWelcome to Single-Player\n")
 
     level = int(input('Pick a level of difficulty (1 to 4): '))
     if level == 1:
-        top = 50
+        top = 20
         tries = 5
     elif level == 2:
-        top = 250
+        top = 100
         tries = 6
     elif level == 3:
-        top = 1000
+        top = 250
         tries = 10
     else:
-        top = 10000
+        top = 1000
         tries = 10
 
     # create a '%' formatted string
