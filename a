@@ -1,0 +1,231 @@
+import random
+from datetime import datetime
+import time
+
+print("░██████╗░██╗░░░██╗███████╗░██████╗░██████╗")
+print("██╔════╝░██║░░░██║██╔════╝██╔════╝██╔════╝")
+print("██║░░██╗░██║░░░██║█████╗░░╚█████╗░╚█████╗░")
+print("██║░░╚██╗██║░░░██║██╔══╝░░░╚═══██╗░╚═══██╗")
+print("╚██████╔╝╚██████╔╝███████╗██████╔╝██████╔╝")
+print("░╚═════╝░░╚═════╝░╚══════╝╚═════╝░╚═════╝░")
+print("A python based guessing game :) by @CoconutA")
+
+#Roleplay things to make game interesting
+myName = input('\nHello! traveller i see you stuped upon my guessing game. First i need to know ur name, yes i know im a stranger, but i really need to know :) \n')
+print("Owwww " + myName + " ,you have a interesting name, but enought talking, lets play")
+
+readyornot = str(input("Are you ready to play? or do u need some more time to get ready? [Y/N]"))
+
+if readyornot == "Y" or readyornot == "y":
+    modeselector = int(input(myName + " would you like to play PVP (1), singleplayer (2) or PVC (3)? \n"))
+else:
+    print("\nCmon... i dont have all the time in the world")
+    ready2 = str(input("So... ready yet? [Y/N]"))
+    if ready2 == "Y" or ready2 == "y":
+        modeselector = int(input(myName + " would you like to play PVP (1), singleplayer (2) or PVC (3)? \n"))
+
+
+#Necessary functions
+
+def number():
+    chances = 1
+    while True:
+        print("\nAttempt number:", chances)
+        get = int(input(f"\nGuess the number between {a} and {b}:"))
+        if get >= a and get <= b:
+            if get == num:
+                print("Congratulation...! You guess the correct number...!")
+                print(f"You took {chances} chances to guess the correct number...")
+                points.append(chances)
+                break
+            elif get < num:
+                print(f"Wrong guess...! Please enter greater number.")
+            else:
+                print(f"Wrong guess...! Please enter smaller number.")
+        else:
+            print("Invalid Input...! Please enter the valid input..!")
+            continue
+        chances += 1
+        continue
+
+def check_points():
+    if points[0] < points[1]:
+        print(f"\n{myName} is win by {points[1] - points[0]} points..")
+    elif points[0] > points[1]:
+        print(f"\n{name_2} is win by {points[0] - points[1]} points..")
+    else:
+        print("\nThis is draw because of same points..!")
+
+def play_quit():
+    play_game = input("\n\nEnter any key to continue or \"Q\" to quit...!")
+    if play_game.capitalize() == "Q":
+        print(
+            "Thanks for your valuable time that you spend with us....! We expect, you will be back soon...! Take care and stay home...!")
+        exit()
+    else:
+        print("Enjoy the programme...!\n")
+
+def login(msg):
+    global myName
+    global name_2
+    with open("record.txt", "a") as f:
+        f.write(f"{myName.capitalize()} and {name_2.capitalize()} are {msg} on {datetime.now()}\n")
+
+import msvcrt as m
+def wait():
+    m.getch()
+
+#Gamemodes (selection)
+
+if modeselector == 1:
+
+    print("\nWelcome to Multi-player\n")
+    name_2 = input("Enter second player name: ")
+    print("\nHello " + myName.capitalize() + " and " + name_2.capitalize())
+    print("\nThe game is about to start!\n")
+    login('')
+
+    try:
+        level = int(input('Pick a level of difficulty (1 to 4): '))
+        if level == 1:
+            top = 20
+            tries = 5
+        elif level == 2:
+            top = 100
+            tries = 6
+        elif level == 3:
+            top = 250
+            tries = 10
+        else:
+            top = 1000
+            tries = 10
+
+        a = 1
+        b = top
+
+        if a < b:
+            if a > 100 or a < -100000 or b > 100000 or b < -100000:
+                print("Number should be lesser than 100 and greater than -100000..")
+                exit()
+        else:
+            print("first number should be lesser than the second one...!")
+            exit()
+
+    except Exception as e:
+        print("Invalid Input...!\n")
+        exit()
+    points = []
+    play = 1
+
+    while True:
+        if play % 2 != 0:
+            num = random.randint(a, b)
+            print(f"{myName} will guess the number..")
+            number()
+            play += 1
+        if play % 2 == 0:
+            num = random.randint(a, b)
+            print(f"{name_2} will guess the number..")
+            number()
+        else:
+            print("Something wents wrong...!\n")
+            exit()
+        check_points()
+        points.clear()
+        play_quit()
+
+if modeselector == 2:
+
+    print("\nWelcome to Single-Player\n")
+
+    level = int(input('Pick a level of difficulty (1 to 4): '))
+    if level == 1:
+        top = 20
+        tries = 5
+    elif level == 2:
+        top = 100
+        tries = 6
+    elif level == 3:
+        top = 250
+        tries = 10
+    else:
+        top = 1000
+        tries = 10
+
+    # create a '%' formatted string
+    sf = "Well, %s, I am thinking of a number between 1 and %d"
+    print(sf % (myName, top))
+
+    # pick the random integer
+    number = random.randint(1, top)
+    print('Try to guess it!.')
+
+    guessesTaken = 0
+    while guessesTaken <= tries:
+        guess = int(input('Take a guess: '))
+        guessesTaken += 1
+        if guess < number:
+            print('Your guess is too low.')
+        if guess > number:
+            print('Your guess is too high.')
+        if guess == number:
+            break
+
+    if guess == number:
+        # create a '%' formatted string
+        sf = "Good job, %s! You guessed my number with %d guesses!"
+        print(sf % (myName, guessesTaken))
+
+    if guess != number:
+        number = str(number)
+        print('Awf u have no more trys. The number I was thinking of was ' + number, "better luck next time")
+
+if modeselector == 3:
+    import random
+
+    print("Hello, ", myName + "!")
+    print("You chose to play against ai!")
+    print("Your goal is to guess the number in as few tries as possible.")
+    print("And don't let the computer beat you (hes smart!) Good luck!")
+
+    level = int(input('Pick a level of difficulty (1 to 4): '))
+    if level == 1:
+            top = 20
+            tries = 5
+    elif level == 2:
+            top = 100
+            tries = 6
+    elif level == 3:
+            top = 250
+            tries = 10
+
+    the_number = random.randint(1, top)
+
+    lower_bound = 1
+    higher_bound = top
+
+    while guess != the_number:
+        guess = int(input("Take a guess: "))
+        tries += 1
+        if guess > the_number:
+            print("Lower!\n")
+        elif guess < the_number:
+            print("Higher!\n")
+        else:
+            break
+
+        print("The computer guessed: " + str( the_number))
+        tries += 1
+        if  the_number > the_number:
+            higher_bound =  the_number - 1
+            print("Too high Computer.\n")
+        elif  the_number < the_number:
+            lower_bound =  the_number + 1
+            print("Too low Computer.\n")
+        else:
+            break
+
+else:
+    readyornot = str(input("Something went wrong"))
+    time.sleep(2)
+    modeselector = int(input(myName + " would you like to play PVP (1), singleplayer (2) or PVC (3)? \n"))
