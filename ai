@@ -1,45 +1,49 @@
-print("NUMBER GUESSING GAME . YOU vs AI \n AI's turn is first\n")
-print('Think of a number a number between 0 and 100. ')
-input('Press Enter when done')
-m=50
-j=100
-i=0
-c=0
-print('\nAnswer with:\n "h" if your number is bigger.\n "l" if your number is smaller.\n "y" if AI guesses the correct number')
-while True:
-    x=input('is it '+str(m)+' ?\n')
-    c+=1
-    if x=="y":
-        print("BINGO")
-        break
-    elif x=="h":
-        i=m
-        m=round(((m+j)/2),0)
-    elif x=="l":
-        j=m
-        m=round(((m+i)/2),0)
+def computer_guess(num):
+    level = int(input('Pick a level of difficulty (1 to 4): '))
+    if level == 1:
+        top = 20
+        tries = 5
+    elif level == 2:
+        top = 100
+        tries = 6
+    elif level == 3:
+        top = 250
+        tries = 10
     else:
-        print("Invalid input")
-        c-=1
+        top = 1000
+        tries = 10
 
-print("Now it's your turn to guess which number computer has thought of between 0 and 100")
-import random
-a=random.randint(0,101)
-d=0
-while True:
-    x=int(input('Tell which number AI has picked between 0 & 100\n'))
-    d+=1
-    if x==a:
-        print('BINGO . You guessed right.')
-        break
-    elif x<a:
-        print('you guessed too low .')
-    elif x>a:
-        print('you guessed too high .')
+    low = 1
+    high = top
+    guess = (low+high)//2
+    while guess != num:
+        guess = (low+high)//2
+        print("The computer takes a guess...", guess)
+        if guess > num:
+            high = guess
+        elif guess < num:
+            low = guess + 1
 
-if c<d:
-    print("The AI guessed it in ",c," rounds while you took ",d," rounds .\n  AI WINS :D\n Robots are your Overlords . Accept it !!!")
-elif c==d:
-    print("Both AI & you took ",c," rounds . So , it's a TIE :|")
-else:
-    print("The AI guessed it in ",c," rounds while you took ",d," rounds .\nYOU WON :\ \nSavour the few wins left before robots outsmart you forever ...")
+    print("The computer guessed", guess, "and it was correct!")
+
+
+def main():
+    num = int("")
+    level = int(input('Pick a level of difficulty (1 to 4): '))
+    if level == 1:
+        top = 20
+        tries = 5
+    elif level == 2:
+        top = 100
+        tries = 6
+    elif level == 3:
+        top = 250
+        tries = 10
+    else:
+        top = 1000
+        tries = 10
+
+computer_guess(num)
+
+if __name__ == '__main__':
+    main()
