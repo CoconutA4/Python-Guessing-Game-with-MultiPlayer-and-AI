@@ -1,4 +1,4 @@
-<h1 align="center"><b>🕹Number Guessing Game<br>Test your Guesses
+<h1 align="center"><b>🕹Number Guessing Game<br>
  </b></h1>
 <h2 align="center"><u><b>Built for a school subject, this is the repo of a terminal based number guessing game</u></b></h3>
 
