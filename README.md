@@ -26,7 +26,7 @@
  
  <h2><u><b>Installation</u></b></h2>
  
- Install using git bash<code> (Currently unavailable)$git clone https://github.com/ </code><br>
+ Install using git bash<code> (Currently unavailable)$git clone https://github.com/monkeythatprograms/Python-Guessing-Game-with-MultiPlayer-and-AI </code><br>
  os click download button 👇 <br>
  <a href="https://github.com/monkeythatprograms/pythontic/raw/main/main.exe" target="blank"><img align="center" src="https://github.com/Akshay-Vs/resources/blob/main/src/download_bt.png" alt="blank" height="78" width="200" /></a>
  
