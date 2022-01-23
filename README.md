@@ -6,7 +6,7 @@
 ----------------------------
 
   <p>
-    <h2><u><b> ♥️ Features ♥️ </u></b> </h2>
+    <h2><u><b> ♥️ Features </u></b> </h2>
     &bull; Different Difficulties <br>
     &bull; Computer Multiplayer <br>
     &bull; Single-player <br>
@@ -16,7 +16,7 @@
  </p>
  
  <p>
-   <h2><u><b> ♥️ How to play? / (How it works) ♥️ </b></u></h3> 
+   <h2><u><b> ♥️ How to play? / (How it works) </b></u></h3> 
    &bull; As soon as you start, the console will ask your name (and store it in the var myName) <br>
    &bull; When the console knows your name it will ask if you want to play the tutorial (if you say yes it initiates the tut function, else it just moves on to var modeselector)<br>
    &bull; After selecting your game mode, the program starts the specific function (sp, ai or mp) <br>
@@ -29,13 +29,13 @@
   </p>
   
    <p>
-   <h2><u><b> ♥️ Coding style ♥️ </b></u></h3> 
+   <h2><u><b> ♥️ Coding style </b></u></h3> 
    &bull; There are 2 types of comments (I - Important) and (NI - Not important)) <br>
    &bull; There's 1 line gap between everything, besides if's <br>
    &bull; I like to make a lot of functions, therefor if u want to expand the code is quite easy <br>
   
 
-   <h2><u><b> ♥️ Explaining the functions ♥️ </b></u></h3> 
+   <h2><u><b> ♥️ Explaining the functions </b></u></h3> 
    &bull; bug - used for crash/error handling <br>
    &bull; troll - used for when the player doesn't cooperate with the game <br>
    &bull; sg - function that contains the game / game functions <br>
@@ -47,7 +47,7 @@
    &bull; ai - starts ai <br>
    &bull; mp - starts multiplayer <br>
 
-   <h2><u><b> ♥️ Explaining the important variables (var) ♥️ </b></u></h3> 
+   <h2><u><b> ♥️ Explaining the important variables (var) </b></u></h3> 
    &bull; myName - used all around the code, it contains the 1st player name <br>
    &bull; modeselector - used to select the game mode player wants to play <br>
    &bull; level - used to select the difficulty <br>
