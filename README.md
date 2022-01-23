@@ -1,4 +1,4 @@
-<h1 align="center"><b>:game_die:	:hearts:Number Guessing Game :hearts: :game_die:	<br>
+<h1 align="center"><b>:game_die:	:hearts:Number Guessing Game & 2 extra games:hearts: :game_die:	<br>
  </b></h1>
 <h2 align="center"><u><b>Built for a school subject, this is the repo of a terminal based number guessing game  EASY TO EXPAND GET CREATIVE GOING PUBLIC SOURCE SOON </u></b></h3>
 
