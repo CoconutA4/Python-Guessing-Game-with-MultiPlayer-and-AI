@@ -20,6 +20,35 @@
    &bull; Guess the actual number based on given hints <br>
    &bull; Fight!, and try to win <br>
   </p>
+  
+   <p>
+   <h2><u><b> Coding style </b></u></h3> 
+   &bull; Theres 2 types of comments (I - Important) and (NI - Not important)) <br>
+   &bull; Theres 1 line gap between everything, besides if´s <br>
+   &bull; I like to make alot of functions, therefor if u want to expand the code is quite easy <br>
+  
+
+   <h2><u><b> Explaining the functions </b></u></h3> 
+   &bull; bug - used for crash/error handling <br>
+   &bull; troll - used for wen the player doesent cooperate with the game <br>
+   &bull; sg - function that contains the game / game functions <br>
+   &bull; restart_sp - restarts singleplayer <br>
+   &bull; restart_ai - restarts ai <br>
+   &bull; restart_mp - restarts multiplayer <br>
+   &bull; tut - starts the tutorial <br>
+   &bull; sp - starts singleplayer <br>
+   &bull; ai - starts ai <br>
+   &bull; mp - starts multiplayer <br>
+
+   <h2><u><b> Explaining the important variables </b></u></h3> 
+   &bull; myName - used all arround the code it contains the 1st player name <br>
+   &bull; modeselector - used to select the gamemode player wants to play <br>
+   &bull; level - used to select the dificulty <br>
+   &bull; top - max uper range of random number generated <br>
+
+
+
+  </p>
  
  <h2 align='left'><u><b>Version</u></b></h2>
  Version 1.0
