@@ -1,4 +1,4 @@
-<h1 align="center"><b>:game_die:	:hearts:Number Guessing Game & 2 extra games:hearts: :game_die:	<br>
+<h1 align="center"><b>:game_die:	:hearts:Number Guessing Game :hearts: :game_die:	<br>
  </b></h1>
 <h2 align="center"><u><b>Built for a school subject, this is the repo of a terminal based number guessing game  EASY TO EXPAND GET CREATIVE GOING PUBLIC SOURCE SOON </u></b></h3>
 
@@ -7,7 +7,6 @@
 
   <p>
     <h2><u><b> ♥️ Features </u></b> </h2>
-    <h2><u><b> Includes 3 diferrent games, guessing game, snake game and adventure game </u></b> </h2>
     &bull; Different Difficulties <br>
     &bull; Computer Multiplayer <br>
     &bull; Single-player <br>
@@ -36,7 +35,7 @@
    &bull; I like to make a lot of functions, therefor if u want to expand the code is quite easy <br>
   
 
-   <h2><u><b> ♥️ Explaining the functions - Snake game </b></u></h3> 
+   <h2><u><b> ♥️ Explaining the functions </b></u></h3> 
    &bull; bug - used for crash/error handling <br>
    &bull; troll - used for when the player doesn't cooperate with the game <br>
    &bull; sg - function that contains the game / game functions <br>
@@ -48,7 +47,7 @@
    &bull; ai - starts ai <br>
    &bull; mp - starts multiplayer <br>
 
-   <h2><u><b> ♥️ Explaining the important variables - Snake game (var) </b></u></h3> 
+   <h2><u><b> ♥️ Explaining the important variables (var) </b></u></h3> 
    &bull; myName - used all around the code, it contains the 1st player name <br>
    &bull; modeselector - used to select the game mode player wants to play <br>
    &bull; level - used to select the difficulty <br>
