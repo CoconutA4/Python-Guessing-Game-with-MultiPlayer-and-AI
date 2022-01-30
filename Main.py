@@ -1,8 +1,9 @@
 import random
- 
+
 import string
- 
+
 import time
+
 
 def bug():
     print("Well something went wrong!, maybe u typed something wrong")
@@ -10,11 +11,13 @@ def bug():
     time.sleep(2)
     sg()
 
+
 def troll():
     print("Ok, thats not funny, stop trolling")
     print("Im restarting the game :)")
     time.sleep(2)
     sg()
+
 
 def typewriter_simulator(message):
     for char in message:
@@ -25,8 +28,7 @@ def typewriter_simulator(message):
 
 
 def sg():
-
-# I - This function restarts SinglePlayer
+    # I - This function restarts SinglePlayer
 
     def restart_sp():
         user_input = input("Would you like to play again? Type 'Yes' or 'No'\n\n")
@@ -40,7 +42,7 @@ def sg():
             print("U can only type yes or no")
             restart_sp()
 
-# I - This function restarts AI
+    # I - This function restarts AI
 
     def restart_ai():
         user_input = input("Would you like to play again? Type 'Yes' or 'No'\n\n")
@@ -54,7 +56,7 @@ def sg():
             print("U can only type yes or no")
             restart_ai()
 
-# I - This function restarts MultiPlayer
+    # I - This function restarts MultiPlayer
 
     def restart_mp():
         user_input = input("Would you like to play again? Type 'Yes' or 'No'\n\n")
@@ -68,7 +70,7 @@ def sg():
             print("U can only type yes or no")
             restart_mp()
 
-# I - This function starts the tutorial
+    # I - This function starts the tutorial
 
     def tut():
         global modeselector
@@ -77,16 +79,20 @@ def sg():
         if tut == "Y" or tut == "y":
             print("I see you chose to go trough the tutorial, nice choice\n")
             time.sleep(1)
-            typewriter_simulator("The game is quite simple, you have 3 game modes, SP (playing alone), MP (2 players) and AI (playing against the computer)\n")
-            typewriter_simulator("The objective is guessing a random number, generated between a limit (depends on the difficulty)\n")
-            typewriter_simulator("Theres 4 dificulties, 1 is from 1-20 (5 tries), 2 is from 1-100 (6 tries), 3 is from 1-250 (10 tries), and 4 from 1-400 (10 tries)\n")
-            modeselector = int(input("\n" + myName + " after what u were taught, would you like to play SP (1), PVP (2) or PVC (3)? \n"))
+            typewriter_simulator(
+                "The game is quite simple, you have 3 game modes, SP (playing alone), MP (2 players) and AI (playing against the computer)\n")
+            typewriter_simulator(
+                "The objective is guessing a random number, generated between a limit (depends on the difficulty)\n")
+            typewriter_simulator(
+                "Theres 4 dificulties, 1 is from 1-20 (5 tries), 2 is from 1-100 (6 tries), 3 is from 1-250 (10 tries), and 4 from 1-400 (10 tries)\n")
+            modeselector = int(input(
+                "\n" + myName + " after what u were taught, would you like to play SP (1), PVP (2) or PVC (3)? \n"))
         else:
             print("No tutorial? hm ur harcore. I like it\n")
 
-# NI - Line  -  is pure roleplay, making the game interesting
+    # NI - Line  -  is pure roleplay, making the game interesting
 
-# NI - Using FSymbols.com to make the text
+    # NI - Using FSymbols.com to make the text
 
     print("░██████╗░██╗░░░██╗███████╗░██████╗░██████╗")
     print("██╔════╝░██║░░░██║██╔════╝██╔════╝██╔════╝")
@@ -96,14 +102,15 @@ def sg():
     print("░╚═════╝░░╚═════╝░╚══════╝╚═════╝░╚═════╝░")
     # NI - Credits -> https://github.com/monkeythatprograms
     print("A python based guessing game :) by @CoconutA4")
-    myName = input('\nHello! traveller i see you stuped upon my guessing game. First i need to know ur name, yes i know im a stranger, but i really need to know :) \n')
+    myName = input(
+        '\nHello! traveller i see you stuped upon my guessing game. First i need to know ur name, yes i know im a stranger, but i really need to know :) \n')
     print("Owwww " + myName + ", you have a interesting name, but enought talking, lets play")
 
-# I - Line  -  Starting the tutorial function
+    # I - Line  -  Starting the tutorial function
 
     tut()
 
-# I - SinglePlayer Function
+    # I - SinglePlayer Function
 
     def sp():
         print("\nWelcome to Single-Player\n")
@@ -166,7 +173,7 @@ def sg():
             print('Awf u have no more trys. The number I was thinking of was ' + number, "better luck next time")
             restart_sp()
 
-# I - Ai Function
+    # I - Ai Function
 
     def ai():
 
@@ -196,6 +203,7 @@ def sg():
         minPossible = 0
         maxPossible = 400
 
+
         # Guessing Game - Player
         while guess != the_number:
             guess = int(input("Please enter a number: \n"))
@@ -223,14 +231,24 @@ def sg():
                 print(art_over)
                 print("Game Over! The number was", the_number, "," + myName + " wins!\n")
                 restart_ai()
+
             guess = random.randint(minPossible, maxPossible)
+
+            if level == 1:
+                maxPossible < 20
+            if level == 2:
+                maxPossible < 100
+            if level == 3:
+                maxPossible < 250
+            if level == 4:
+                maxPossible < 400
 
             # Guessing Game - AI
             if guess > the_number:
-                print("Ai, guess lower...\n")
+                print("Ai, choose the number ", guess, "and needs to guess lower...")
                 maxPossible = guess - 1
             elif guess < the_number:
-                print("Ai, guess higher...\n")
+                print("Ai, choose the number ", guess, "and needs to guess higher...")
                 minPossible = guess + 1
             else:
                 art_over = r"""
@@ -250,7 +268,7 @@ def sg():
                       "The Ai wins!, im telling you, one day they will take over the world!!!!\n")
                 restart_ai()
 
-# I - MultiPlayer Function
+    # I - MultiPlayer Function
 
     def mp():
         print("\nWelcome to MultiPlayer\n")
@@ -309,7 +327,7 @@ def sg():
                 print("Both ", player1, " and ", player2, " lose")
                 restart_mp()
 
-# I - Calling the functions to the respective game modes
+    # I - Calling the functions to the respective game modes
 
     modeselector = int(input("\n" + myName + ", would you like to play SP (1), PVP (2) or PVC (3)? \n"))
 
